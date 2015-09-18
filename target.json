@@ -1,0 +1,57 @@
+{
+  "name": "st-nucleo-f091rc-gcc",
+  "version": "0.0.0",
+  "inherits": {
+    "mbed-gcc": "*"
+  },
+  "description": "Unoffcial mbed build target for the mbed st-nucleo-f091rc development board.",
+  "licenses": [
+    {
+      "url": "https://spdx.org/licenses/Apache-2.0",
+      "type": "Apache-2.0"
+    }
+  ],
+  "keywords": [
+    "mbed-target:nucleo-f091rc",
+    "nucleo-f091rc",
+    "f091",
+    "nucleo",
+    "gcc"
+  ],
+  "similarTo": [
+    "nucleo-f091rc",
+    "f091rc",
+    "f091",
+    "nucleo",
+    "stm32f091rc",
+    "stm32f091",
+    "stm32f0",
+    "stm32",
+    "st",
+    "cortex-m0",
+    "armv7-m",    
+    "arm",
+    "gcc"
+  ],
+  "toolchain": "CMake/toolchain.cmake",
+  "debug": [
+    "valinor",
+    "--target",
+    "stm32f091rc",
+    "$program"
+  ],
+  "scripts": {
+    "debug": [
+      "valinor",
+      "--target",
+      "stm32f091rc",
+      "$program"
+    ],
+    "test": [
+      "mbed_test_wrapper",
+      "--target",
+      "NUCLEO_F091RC",
+      "$program"
+    ]
+  }
+}
