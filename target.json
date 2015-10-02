@@ -29,9 +29,10 @@
     "stm32",
     "st",
     "cortex-m0",
-    "armv7-m",    
+    "armv7-m",
     "arm",
-    "gcc"
+    "gcc",
+    "mbed"
   ],
   "toolchain": "CMake/toolchain.cmake",
   "debug": [
