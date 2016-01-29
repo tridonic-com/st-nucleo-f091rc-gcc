@@ -135,7 +135,7 @@ SECTIONS
     {
         __StackLimit = .;
         *(.stack*);
-        . += 0x1800 - (. - __StackLimit);
+        . += 0x1000 - (. - __StackLimit);
     } > RAM
 
     /* Set stack top to end of RAM, and stack limit move down by
