@@ -18,7 +18,8 @@
 MEMORY
 {
   VECTORS (rx)          : ORIGIN = 0x08000000, LENGTH = 0x00000400
-  FLASH (rx)            : ORIGIN = 0x08000400, LENGTH = 256K - 0x400
+  FLASH (rx)            : ORIGIN = 0x08000400, LENGTH = 254K - 0x400
+  CONFIG_DATA (rx)      : ORIGIN = 0x0803F800, LENGTH = 0x00000800
 /*  CCM (rwx)             : ORIGIN = 0x10000000, LENGTH = 64K */
   RAM (rwx)             : ORIGIN = 0x200000C0, LENGTH = 32k - 0x0C0
 }
@@ -111,6 +112,13 @@ SECTIONS
         KEEP(*(.eh_frame*))
     } > FLASH
 
+    .config_data :
+    {
+        __config_data = .;
+        KEEP(*(.config_data))
+         . = ALIGN(4);
+    } > CONFIG_DATA
+    
     .ARM.extab :
     {
         *(.ARM.extab* .gnu.linkonce.armextab.*)
