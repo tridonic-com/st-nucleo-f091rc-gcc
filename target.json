@@ -1,6 +1,6 @@
 {
   "name": "st-nucleo-f091rc-gcc",
-  "version": "0.0.0-tri-0.0.3",
+  "version": "0.0.0-tri-0.0.4",
   "inherits": {
     "mbed-gcc": "*"
   },
