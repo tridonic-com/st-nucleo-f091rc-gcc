@@ -19,6 +19,10 @@
     "gcc"
   ],
   "config": {
+    "minar": {
+      "initial_event_pool_size": 20,
+      "additional_event_pools_size": 50
+    },
     "mbed-os": {},
     "cmsis": {
       "nvic": {
