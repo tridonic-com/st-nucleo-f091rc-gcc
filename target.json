@@ -63,6 +63,7 @@
     },
     "hardware": {
       "externalClock": "8000000",
+      "internalClock": "16000000",
       "pins": {
         "LED1": "PA_5",
         "LED2": "NC",
