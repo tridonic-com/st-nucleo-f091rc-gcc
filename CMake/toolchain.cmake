@@ -13,10 +13,10 @@
 # limitations under the License.
 #
 
-if(TARGET_STM32F091RC_NUCLEO_GCC_TOOLCHAIN_INCLUDED)
+if(TARGET_ST_NUCLEO_F091RC_GCC_TOOLCHAIN_INCLUDED)
     return()
 endif()
-set(TARGET_STM32F091RC_NUCLEO_GCC_TOOLCHAIN_INCLUDED 1)
+set(TARGET_ST_NUCLEO_F091RC_GCC_TOOLCHAIN_INCLUDED 1)
 
 # provide compatibility definitions for compiling with this target: these are
 # definitions that legacy code assumes will be defined. Before adding something
@@ -24,9 +24,9 @@ set(TARGET_STM32F091RC_NUCLEO_GCC_TOOLCHAIN_INCLUDED 1)
 # definition that you're about to add to rely on the TARGET_LIKE_XXX
 # definitions that yotta provides based on the target.json file.
 #
-add_definitions("-DTARGET_NUCLEO_F091RC -DTARGET_STM32F091RC -DTARGET_STM32F0 -DTOOLCHAIN_GCC -DTOOLCHAIN_GCC_ARM")
+add_definitions("-DTARGET_NUCLEO_F091RC -DTARGET_STM32F091RC -DSTM32F091xC -DTARGET_STM32F0 -DTOOLCHAIN_GCC -DTOOLCHAIN_GCC_ARM")
 
-# append non-generic flags, and set link script
+# append non-generic flags, and set Nucleo-F091RC-specific link script
 
 set(_CPU_COMPILATION_OPTIONS "-mcpu=cortex-m0 -mthumb -D__thumb2__")
 
@@ -34,4 +34,4 @@ set(CMAKE_C_FLAGS_INIT             "${CMAKE_C_FLAGS_INIT} ${_CPU_COMPILATION_OPT
 set(CMAKE_ASM_FLAGS_INIT           "${CMAKE_ASM_FLAGS_INIT} ${_CPU_COMPILATION_OPTIONS}")
 set(CMAKE_CXX_FLAGS_INIT           "${CMAKE_CXX_FLAGS_INIT} ${_CPU_COMPILATION_OPTIONS}")
 set(CMAKE_MODULE_LINKER_FLAGS_INIT "${CMAKE_MODULE_LINKER_FLAGS_INIT} -mcpu=cortex-m0 -mthumb")
-set(CMAKE_EXE_LINKER_FLAGS_INIT    "${CMAKE_EXE_LINKER_FLAGS_INIT} -mcpu=cortex-m0 -mthumb -T\"${CMAKE_CURRENT_LIST_DIR}/../ld/NUCLEO_F091RC.ld\"")
+set(CMAKE_EXE_LINKER_FLAGS_INIT    "${CMAKE_EXE_LINKER_FLAGS_INIT} -mcpu=cortex-m0 -mthumb -T\"${CMAKE_CURRENT_LIST_DIR}/../ld/STM32F091RC.ld\"")

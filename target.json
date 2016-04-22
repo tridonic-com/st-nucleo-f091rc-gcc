@@ -1,22 +1,50 @@
 {
   "name": "st-nucleo-f091rc-gcc",
-  "version": "0.0.0-tri-0.0.4",
-  "inherits": {
-    "mbed-gcc": "*"
+  "version": "0.0.3-tri-0.4.0",
+  "description": "Official mbed build target for the mbed ST Nucleo f091rc development board, using armgcc toolchain",
+  "homepage": "https://github.com/ARMmbed/target-st-nucleo-f091rc-gcc",
+  "repository": {
+    "url": "git@github.com:ARMmbed/target-st-nucleo-f091rc-gcc.git",
+    "type": "git"
   },
-  "description": "Unoffcial mbed build target for the mbed st-nucleo-f091rc development board.",
   "licenses": [
     {
       "url": "https://spdx.org/licenses/Apache-2.0",
       "type": "Apache-2.0"
     }
   ],
+  "inherits": {
+    "mbed-gcc": "*"
+  },
   "keywords": [
     "mbed-target:nucleo-f091rc",
+    "mbed-official",
     "nucleo-f091rc",
+    "nucleo",
+    "x-nucleo",
+    "ST",
+    "STM",
+    "gcc"
+  ],
+  "similarTo": [
+    "nucleo-f091rc",
+    "f091rc",
     "f091",
     "nucleo",
-    "gcc"
+    "stm32f091rct6",
+    "stm32f091rc",
+    "stm32f091xc",
+    "stm32f091",
+    "stm32f0",
+    "stm32",
+    "st",
+    "cortex-m0",
+    "armv7-m",
+    "arm",
+    "gcc",
+    "mbed",
+    "stm32f091rc-no-inherit",
+    "stm32f091xc-no-inherit"
   ],
   "config": {
     "minar": {
@@ -76,22 +104,6 @@
       }
     }
   },
-  "similarTo": [
-    "nucleo-f091rc",
-    "f091rc",
-    "f091",
-    "nucleo",
-    "stm32f091rc",
-    "stm32f091",
-    "stm32f0",
-    "stm32",
-    "st",
-    "cortex-m0",
-    "armv7-m",
-    "arm",
-    "gcc",
-    "mbed"
-  ],
   "toolchain": "CMake/toolchain.cmake",
   "debug": [
     "valinor",
@@ -103,13 +115,13 @@
     "debug": [
       "valinor",
       "--target",
-      "stm32f091rc",
+      "ST_NUCLEO_F091RC",
       "$program"
     ],
     "test": [
       "mbed_test_wrapper",
       "--target",
-      "NUCLEO_F091RC",
+      "ST_NUCLEO_F091RC",
       "$program"
     ]
   }
