@@ -19,7 +19,7 @@ MEMORY
 {
   START_PATTERN (rx)    : ORIGIN = 0x08005078, LENGTH = 0x8
   FLASH (rx)            : ORIGIN = 0x08005080, LENGTH = 256K - 0x08
-  RAM (rwx)             : ORIGIN = 0x20000194, LENGTH = 96k - 0x194
+  RAM (rwx)             : ORIGIN = 0x20000194, LENGTH = 32K - 0x194
 }
 
 /* Linker script to place sections and symbol values. Should be used together
